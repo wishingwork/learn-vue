@@ -3,25 +3,29 @@
 import Vue from 'vue'
 import App from './App'
 // import router from './router'
-
 import VueRouter from 'vue-router'
-
+import Vuex from 'vuex'
+import store from './store'
 Vue.config.productionTip = false
 
 // init
 Vue.use(VueRouter)
+Vue.use(Vuex)
 
 // page
 import Hello from './pages/HelloWorld.vue'
 import CtoF from './pages/C2F'
 import CtoFMethod from './pages/C2FMethod'
 import LearnComponent from './pages/LearnComponent'
+import Count from './pages/Count'
 
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'bootstrap'
 Vue.use(BootstrapVue)
+
+
 
 const router = new VueRouter({
 	mode: 'history',
@@ -46,7 +50,12 @@ const router = new VueRouter({
 			path: '/LearnComponent',
 			name: 'LearnComponent',
 			component: LearnComponent
-		},		
+		},	
+		{
+			path: '/count',
+			name: 'count',
+			component: Count
+		},				
 		{
 			path: '/*', redirect: '/hello'
 		}
@@ -62,5 +71,6 @@ new Vue({
   router,
   // components: { App },
   // template: '<App/>',
+  store,
   render: h => h(App)
 })

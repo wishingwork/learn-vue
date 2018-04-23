@@ -1,9 +1,23 @@
 <template>
 	<div>
+		<navbar>
+			<div slot="right" class="form-row">
+				<div class="col">
+					<input type="text" placeholder="Email" class="form-control">
+				</div>
+				<div class="col">
+					<input type="password" placeholder="Password" class="form-control">
+				</div>
+				<button type="submit" class="btn btn-success">Sign in</button>
+			</div>
+		</navbar>
+    	<jumbotron />		
 		<container :list="list" />
 	</div>
 </template>
 <script>
+import Navbar from '../components/navbar'
+import Jumbotron from '../components/jumbotron'
 import Container from '../components/container'
 
 export default{
@@ -34,7 +48,9 @@ export default{
 		}
 	},
 	components: {
-		Container
+		Container,
+		Navbar,
+		Jumbotron
 	}
 }
 </script>
