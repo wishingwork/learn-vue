@@ -18,6 +18,7 @@ import CtoF from './pages/C2F'
 import CtoFMethod from './pages/C2FMethod'
 import LearnComponent from './pages/LearnComponent'
 import Count from './pages/Count'
+import Todos from './pages/todo'
 
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -56,6 +57,11 @@ const router = new VueRouter({
 			name: 'count',
 			component: Count
 		},				
+		{
+			path: '/todos',
+			name: 'todos',
+			component: Todos
+		},
 		{
 			path: '/*', redirect: '/hello'
 		}
