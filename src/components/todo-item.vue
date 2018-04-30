@@ -1,10 +1,12 @@
 <template>
 	<li>
 		<div v-if="!updateMode">
-			<label>
+<!-- 			<label>
 				<input type="checkbox" :checked="item.done" @change="toggleTodo( item.key )">
 				{{ item.content }}
-			</label>
+			</label> -->
+			<custom-checkbox :item="item" @toggleTodo="toggleTodo" />
+
 			<button class="btn btn-xs btn-primary" @click="showEditMode">
 				<span class="glyphicon glyphicon-pencil" aria-hidden="true">ii</span>
 			</button>
@@ -19,8 +21,12 @@
 </template>
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import customCheckbox from './customCheckbox.vue';
 
 export default {
+	components: {
+		customCheckbox
+	},
 	props: {
 		item: Object
 	},

@@ -31,16 +31,26 @@ export const mutations = {
 		});
 		todoKey++;
 	},
-	[types.TOGGLE_TODO] (state, key) {
+	// [types.TOGGLE_TODO] (state, key) {
+	// 	for(var i in state.todos) {
+	// 		var item = state.todos[i];
+	// 		if( item.key === key ) {
+	// 			item.done = !item.done;
+	// 			console.log('TOGGLE_TODO:', item.content, 'done?', item.done);
+	// 			break;
+	// 		}
+	// 	}
+	// },
+	[types.TOGGLE_TODO] (state, obj) {
 		for(var i in state.todos) {
 			var item = state.todos[i];
-			if( item.key === key ) {
-				item.done = !item.done;
-				console.log('TOGGLE_TODO:', item.content, 'done?', item.done);
+			if( item.key === obj.key ) {
+				item.done = obj.checked;
+				console.log('TOGGLE_TODO:', item.content, '| obj.checked?', obj.checked, '| done?', item.done);
 				break;
 			}
 		}
-	},
+	},	
 	[types.DELETE_TODO] (state, key) {
 		for(var i in state.todos) {
 			var item = state.todos[i];

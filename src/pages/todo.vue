@@ -25,16 +25,17 @@
 					</button>
 				</li> -->
 				<ol>
-					<todoItem v-for="(item, index) in todoList" :item="item" />
+					<todoItem v-for="(item, index) in todoList" :item="item"  :key="item.id" />
 				</ol>
 			</div>
 			<div class="col-md-6">
 				<h2>Done List:</h2>
 				<li v-for="(item, index) in doneList">
-					<label>
+<!-- 					<label>
 						<input type="checkbox" :checked="item.done" @change="toggleTodo( item.key )">
 						{{ item.content }}
-					</label>
+					</label> -->
+					<custom-checkbox :item="item" @toggleTodo="toggleTodo" />					
 				</li>
 			</div>			
 		</div>
@@ -43,10 +44,12 @@
 <script>
 import {mapGetters, mapActions } from 'vuex'
 import todoItem from '../components/todo-item.vue'
+import customCheckbox from '../components/customCheckbox.vue';
 
 export default {
 	components: {
-		todoItem
+		todoItem,
+		customCheckbox
 	},
 	data() {
 		return {
