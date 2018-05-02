@@ -19,6 +19,8 @@ import CtoFMethod from './pages/C2FMethod'
 import LearnComponent from './pages/LearnComponent'
 import Count from './pages/Count'
 import Todos from './pages/todo'
+import Shop from './pages/shop'
+import Cart from './pages/cart'
 
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -61,6 +63,16 @@ const router = new VueRouter({
 			path: '/todos',
 			name: 'todos',
 			component: Todos
+		},
+		{
+			path: '/shopping',
+			name: 'shopping',
+			component: Shop
+		},
+		{
+			path: '/cart',
+			name: 'cart',
+			component: Cart
 		},
 		{
 			path: '/*', redirect: '/hello'
