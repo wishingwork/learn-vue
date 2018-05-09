@@ -21,6 +21,8 @@ import Count from './pages/Count'
 import Todos from './pages/todo'
 import Shop from './pages/shop'
 import Cart from './pages/cart'
+import Opendata from './pages/open1999'
+import Login from './pages/login'
 
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -75,7 +77,15 @@ const router = new VueRouter({
 			component: Cart
 		},
 		{
+			path: '/opendata',
+			name: 'opendata',
+			component: Opendata
+		},
+		{
 			path: '/*', redirect: '/hello'
+		},
+		{
+			path: '/login', name: 'login', component: Login
 		}
 	]
 });
